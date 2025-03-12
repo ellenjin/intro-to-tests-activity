@@ -1,19 +1,25 @@
 from main import count_a_letter
 import pytest
 
-def test_demo_one():
-    num_1 = 8
-    num_2 = 9
+def test_letter_is_int(): # Pass in an integer for letter
+    # Arrange
+    letter = 1
+    sentence = "Hello World!"
 
-    result = num_1 + num_2
+    with pytest.raises(AttributeError): # expected AttributeError
+        count_a_letter(sentence, letter)
 
-    assert result == 17
+def test_empty_sentence(): # Check that empty sentence returns None
+    # Arrange
+    letter = 'A'
+    sentence = ""
+    # Act
+    result = count_a_letter(sentence, letter)
+    # assert
+    assert result == None
 
-def test_demo_two():
-    num_1 = 18
-    num_2 = 24
-
-    result = num_1 + num_2
-
-    assert result == 42
-# Delete the demo tests and add your tests here 
+def test_sentence_letter_same():
+    letter = "A"
+    sentence = "A"
+    result = count_a_letter(sentence, letter)
+    assert result == 1
