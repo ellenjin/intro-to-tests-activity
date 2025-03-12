@@ -16,6 +16,3 @@ def count_a_letter(sentence, letter):
 # Sentence = A, letter = A -- return count = 1
 # check if we input integer for 'letter', the return result None
 # check that empty string returns None
-# 
-
-
